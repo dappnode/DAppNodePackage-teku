@@ -1,11 +1,11 @@
 {
-  "name": "teku-prater.dnp.dappnode.eth",
+  "name": "teku.dnp.dappnode.eth",
   "version": "0.1.0",
   "upstreamVersion": "22.6.1",
   "architectures": ["linux/amd64"],
   "upstreamRepo": "ConsenSys/teku",
-  "shortDescription": "Teku prater ETH2.0 Beacon chain + validator",
-  "description": "Teku prater ETH2.0 Beacon chain + validator",
+  "shortDescription": "Teku ETH2.0 Beacon chain + validator",
+  "description": "Teku ETH2.0 Beacon chain + validator",
   "type": "service",
   "author": "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)",
   "contributors": [
@@ -15,20 +15,20 @@
   "categories": ["Blockchain", "ETH2.0"],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dappnode/DAppNodePackage-teku-prater.git"
+    "url": "git+https://github.com/dappnode/DAppNodePackage-teku.git"
   },
   "bugs": {
-    "url": "https://github.com/dappnode/DAppNodePackage-teku-prater/issues"
+    "url": "https://github.com/dappnode/DAppNodePackage-teku/issues"
   },
   "links": {
-    "ui": "http://ui.web3signer-prater.dappnode?signer_url=http://web3signer.web3signer-prater.dappnode:9000",
+    "ui": "http://ui.web3signer.dappnode?signer_url=http://web3signer.web3signer.dappnode:9000",
     "homepage": "https://docs.teku.consensys.net",
     "readme": "https://github.com/ConsenSys/teku/blob/master/README.md",
     "docs": "https://docs.teku.consensys.net"
   },
   "license": "GPL-3.0",
   "requirements": {
-    "minimumDappnodeVersion": "0.2.51"
+    "minimumDappnodeVersion": "0.2.57"
   },
   "chain": {
     "driver": "ethereum-beacon-chain",
@@ -36,7 +36,7 @@
     "portNumber": 3500
   },
   "dependencies": {
-    "web3signer-prater.dnp.dappnode.eth": "latest"
+    "web3signer.dnp.dappnode.eth": "latest"
   },
   "warnings": {
     "onRemove": "Make sure your web3signer does not have this client selected or you will stop validating! (Packages > web3signer > config > client)"
