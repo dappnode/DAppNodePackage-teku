@@ -1,20 +1,20 @@
 [ 
     {
         "labels": {
-            "package": "teku-prater.dnp.dappnode.eth",
-            "service": "beacon-chain.teku-prater.dappnode"
+            "package": "teku.dnp.dappnode.eth",
+            "service": "beacon-chain.teku.dappnode"
         },
         "targets": [
-            "beacon-chain.teku-prater.dappnode:8008"
+            "beacon-chain.teku.dappnode:8008"
         ]
     },
     {
         "labels": {
-            "package": "teku-prater.dnp.dappnode.eth",
-            "service": "validator.teku-prater.dappnode"
+            "package": "teku.dnp.dappnode.eth",
+            "service": "validator.teku.dappnode"
         },
         "targets": [
-            "validator.teku-prater.dappnode:8008"
+            "validator.teku.dappnode:8008"
         ]
     }
 ]
