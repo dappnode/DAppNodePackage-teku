@@ -9,7 +9,6 @@ services:
     environment:
       BEACON_API_PORT: 3500
       HTTP_ENGINE: ""
-      P2P_PORT: 9105
       CHECKPOINT_SYNC_URL: ""
       P2P_PORT: 9105
       EXTRA_OPTS: ""
