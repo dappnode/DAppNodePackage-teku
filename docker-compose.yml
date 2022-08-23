@@ -5,12 +5,13 @@ services:
       context: ./beacon-chain
       args:
         BEACON_API_PORT: 3500
-        UPSTREAM_VERSION: 22.7.0
+        UPSTREAM_VERSION: 22.8.0
     environment:
       BEACON_API_PORT: 3500
       HTTP_ENGINE: ""
       P2P_PORT: 9105
       CHECKPOINT_SYNC_URL: ""
+      P2P_PORT: 9105
       EXTRA_OPTS: ""
     volumes:
       - "teku-data:/opt/teku/data"
@@ -23,7 +24,7 @@ services:
     build:
       context: ./validator
       args:
-        UPSTREAM_VERSION: 22.7.0
+        UPSTREAM_VERSION: 22.8.0
     environment:
       LOG_TYPE: INFO
       BEACON_NODE_ADDR: "http://beacon-chain.teku.dappnode:3500"
