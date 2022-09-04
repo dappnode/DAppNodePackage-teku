@@ -8,7 +8,6 @@ exec /opt/teku/bin/teku \
     --data-base-path=/opt/teku/data \
     --ee-endpoint=$HTTP_ENGINE \
     --ee-jwt-secret-file="/jwtsecret" \
-    --eth1-endpoint=$HTTP_WEB3PROVIDER \
     --p2p-port=$P2P_PORT \
     --rest-api-cors-origins="*" \
     --rest-api-interface=0.0.0.0 \
