@@ -49,7 +49,7 @@ fields:
   - id: feeRecipientAddress
     target:
       type: environment
-      name: FEE_RECIPIENT_ADDRESS
+      name: DEFAULT_FEE_RECIPIENT
       service: [beacon-chain, validator]
     title: Fee Recipient Address
     description: >-
