@@ -21,6 +21,11 @@ if [[ "$EXIT_VALIDATOR" == "I want to exit my validators" ]] && ! [ -z "$KEYSTOR
     fi
 fi
 
+#Handle Graffiti Character Limit
+oLang=$LANG oLcAll=$LC_ALL
+LANG=C LC_ALL=C 
+graffitiString=${GRAFFITI:0:32}
+LANG=$oLang LC_ALL=$oLcAll
 
 # Teku must start with the current env due to JAVA_HOME var
 exec /opt/teku/bin/teku --log-destination=CONSOLE \
@@ -37,7 +42,7 @@ exec /opt/teku/bin/teku --log-destination=CONSOLE \
   --validator-api-interface=0.0.0.0 \
   --validator-api-port="$VALIDATOR_PORT" \
   --validator-api-host-allowlist=* \
-  --validators-graffiti="${GRAFFITI}" \
+  --validators-graffiti="${graffitiString}" \
   --validator-api-keystore-file=/cert/teku_client_keystore.p12 \
   --validator-api-keystore-password-file=/cert/teku_keystore_password.txt \
   --validators-proposer-default-fee-recipient="${DEFAULT_FEE_RECIPIENT}" \
