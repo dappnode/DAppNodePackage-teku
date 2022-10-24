@@ -5,9 +5,10 @@ services:
       context: ./beacon-chain
       args:
         BEACON_API_PORT: 3500
-        UPSTREAM_VERSION: 22.9.0
+        UPSTREAM_VERSION: 22.9.1
     environment:
       BEACON_API_PORT: 3500
+      CONFIG_MODE: basic
       HTTP_ENGINE: ""
       CHECKPOINT_SYNC_URL: ""
       P2P_PORT: 9105
@@ -24,13 +25,15 @@ services:
     build:
       context: ./validator
       args:
-        UPSTREAM_VERSION: 22.9.0
+        UPSTREAM_VERSION: 22.9.1
     environment:
       LOG_TYPE: INFO
       BEACON_NODE_ADDR: "http://beacon-chain.teku.dappnode:3500"
       GRAFFITI: validating_from_DAppNode
       EXTRA_OPTS: ""
       DEFAULT_FEE_RECIPIENT: ""
+      EXIT_VALIDATOR: ""
+      KEYSTORES_VOLUNTARY_EXIT: ""
     restart: unless-stopped
     image: "validator.teku.dnp.dappnode.eth:0.1.0"
 volumes:
