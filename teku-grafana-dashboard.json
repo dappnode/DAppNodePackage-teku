@@ -645,33 +645,33 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "validator_performance_included_attestations{instance=\"validator.teku.dappnode:8008\"} / validator_performance_expected_attestations{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_included_attestations{instance=\"beacon-chain.teku.dappnode:8008\"} / validator_performance_expected_attestations{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Included",
           "refId": "C"
         },
         {
-          "expr": "validator_performance_correct_head_block_count{instance=\"validator.teku.dappnode:8008\"} / validator_performance_included_attestations{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_correct_head_block_count{instance=\"beacon-chain.teku.dappnode:8008\"} / validator_performance_included_attestations{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Correct Head",
           "refId": "A"
         },
         {
-          "expr": "validator_performance_correct_target_count{instance=\"validator.teku.dappnode:8008\"} / validator_performance_included_attestations{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_correct_target_count{instance=\"beacon-chain.teku.dappnode:8008\"} / validator_performance_included_attestations{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Correct Target",
           "refId": "B"
         },
         {
           "exemplar": true,
-          "expr": "\n(\nvalidator_performance_correct_head_block_count{instance=\"validator.teku.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"validator.teku.dappnode:8008\"} - validator_performance_correct_head_block_count{instance=\"validator.teku.dappnode:8008\"}) +\nvalidator_performance_correct_target_count{instance=\"validator.teku.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"validator.teku.dappnode:8008\"} - validator_performance_correct_target_count{instance=\"validator.teku.dappnode:8008\"}) +\nvalidator_performance_included_attestations{instance=\"validator.teku.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"validator.teku.dappnode:8008\"} - validator_performance_included_attestations{instance=\"validator.teku.dappnode:8008\"}) +\n(0.875  * validator_performance_included_attestations{instance=\"validator.teku.dappnode:8008\"} / validator_performance_inclusion_distance_average{instance=\"validator.teku.dappnode:8008\"})\n) / validator_performance_expected_attestations{instance=\"validator.teku.dappnode:8008\"} / 3.875",
+          "expr": "\n(\nvalidator_performance_correct_head_block_count{instance=\"beacon-chain.teku.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"beacon-chain.teku.dappnode:8008\"} - validator_performance_correct_head_block_count{instance=\"beacon-chain.teku.dappnode:8008\"}) +\nvalidator_performance_correct_target_count{instance=\"beacon-chain.teku.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"beacon-chain.teku.dappnode:8008\"} - validator_performance_correct_target_count{instance=\"beacon-chain.teku.dappnode:8008\"}) +\nvalidator_performance_included_attestations{instance=\"beacon-chain.teku.dappnode:8008\"} - (validator_performance_expected_attestations{instance=\"beacon-chain.teku.dappnode:8008\"} - validator_performance_included_attestations{instance=\"beacon-chain.teku.dappnode:8008\"}) +\n(0.875  * validator_performance_included_attestations{instance=\"beacon-chain.teku.dappnode:8008\"} / validator_performance_inclusion_distance_average{instance=\"beacon-chain.teku.dappnode:8008\"})\n) / validator_performance_expected_attestations{instance=\"beacon-chain.teku.dappnode:8008\"} / 3.875",
           "interval": "",
           "legendFormat": "{{service}} Attestation Rewards Earned",
           "refId": "D"
         },
         {
           "exemplar": true,
-          "expr": "validator_performance_included_sync_committee_messages{instance=\"validator.teku.dappnode:8008\"} / validator_performance_expected_sync_committee_messages{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_included_sync_committee_messages{instance=\"beacon-chain.teku.dappnode:8008\"} / validator_performance_expected_sync_committee_messages{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "{{service}} Included Signatures",
@@ -679,7 +679,7 @@
         },
         {
           "exemplar": true,
-          "expr": "validator_performance_produced_sync_committee_messages{instance=\"validator.teku.dappnode:8008\"} / validator_performance_expected_sync_committee_messages{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_produced_sync_committee_messages{instance=\"beacon-chain.teku.dappnode:8008\"} / validator_performance_expected_sync_committee_messages{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "{{service}} Produced Signatures",
@@ -687,7 +687,7 @@
         },
         {
           "exemplar": true,
-          "expr": "validator_performance_correct_sync_committee_messages{instance=\"validator.teku.dappnode:8008\"} / validator_performance_produced_sync_committee_messages{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_correct_sync_committee_messages{instance=\"beacon-chain.teku.dappnode:8008\"} / validator_performance_produced_sync_committee_messages{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "hide": false,
           "interval": "",
           "legendFormat": "{{service}} Correct Signatures",
@@ -790,19 +790,19 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "validator_performance_inclusion_distance_min{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_inclusion_distance_min{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Minimum",
           "refId": "A"
         },
         {
-          "expr": "validator_performance_inclusion_distance_average{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_inclusion_distance_average{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Average",
           "refId": "B"
         },
         {
-          "expr": "validator_performance_inclusion_distance_max{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_inclusion_distance_max{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Maximum",
           "refId": "C"
@@ -904,7 +904,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "validator_performance_included_blocks{instance=\"validator.teku.dappnode:8008\"} / validator_performance_expected_blocks{instance=\"validator.teku.dappnode:8008\"}",
+          "expr": "validator_performance_included_blocks{instance=\"beacon-chain.teku.dappnode:8008\"} / validator_performance_expected_blocks{instance=\"beacon-chain.teku.dappnode:8008\"}",
           "interval": "",
           "legendFormat": "{{service}} Included Blocks",
           "refId": "A"
