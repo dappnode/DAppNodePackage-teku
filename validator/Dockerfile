@@ -16,8 +16,4 @@ RUN apt update && apt install jq ca-certificates --yes && \
 
 ENV JAVA_OPTS="-Xmx4g"
 
-
-
-
-
 ENTRYPOINT [ "entrypoint.sh" ]
