@@ -8,12 +8,10 @@ services:
         UPSTREAM_VERSION: 22.10.2
     environment:
       BEACON_API_PORT: 3500
-      CONFIG_MODE: basic
       HTTP_ENGINE: ""
       CHECKPOINT_SYNC_URL: ""
       P2P_PORT: 9105
       EXTRA_OPTS: ""
-      DEFAULT_FEE_RECIPIENT: ""
     volumes:
       - "teku-data:/opt/teku/data"
     ports:
@@ -31,7 +29,6 @@ services:
       BEACON_NODE_ADDR: "http://beacon-chain.teku.dappnode:3500"
       GRAFFITI: validating_from_DAppNode
       EXTRA_OPTS: ""
-      DEFAULT_FEE_RECIPIENT: ""
       EXIT_VALIDATOR: ""
       KEYSTORES_VOLUNTARY_EXIT: ""
     restart: unless-stopped
