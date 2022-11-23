@@ -8,7 +8,6 @@ services:
         UPSTREAM_VERSION: 22.10.2
     environment:
       BEACON_API_PORT: 3500
-      HTTP_ENGINE: ""
       CHECKPOINT_SYNC_URL: ""
       P2P_PORT: 9105
       EXTRA_OPTS: ""
@@ -31,6 +30,7 @@ services:
       EXTRA_OPTS: ""
       EXIT_VALIDATOR: ""
       KEYSTORES_VOLUNTARY_EXIT: ""
+      FEE_RECIPIENT_ADDRESS: ""
     restart: unless-stopped
     image: "validator.teku.dnp.dappnode.eth:0.1.0"
 volumes:
