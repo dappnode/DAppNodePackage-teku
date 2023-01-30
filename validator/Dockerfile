@@ -14,6 +14,6 @@ COPY entrypoint.sh /usr/bin/entrypoint.sh
 RUN apt update && apt install jq ca-certificates --yes && \
     chmod +x /usr/bin/entrypoint.sh
 
-ENV JAVA_OPTS="-Xmx4g"
+ENV JAVA_OPTS="-Xmx5g"
 
 ENTRYPOINT [ "entrypoint.sh" ]
