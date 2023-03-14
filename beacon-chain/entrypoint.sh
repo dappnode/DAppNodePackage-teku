@@ -30,6 +30,14 @@ if [ -n "$_DAPPNODE_GLOBAL_MEVBOOST_MAINNET" ] && [ "$_DAPPNODE_GLOBAL_MEVBOOST_
     EXTRA_OPTS="--builder-endpoint=${MEVBOOST_URL} ${EXTRA_OPTS}"
 fi
 
+# Chek the env FEE_RECIPIENT_MAINNET has a valid ethereum address if not set to the null address
+if [ -n "$FEE_RECIPIENT_MAINNET" ] && [[ "$FEE_RECIPIENT_MAINNET" =~ ^0x[a-fA-F0-9]{40}$ ]]; then
+    FEE_RECIPIENT_ADDRESS="$FEE_RECIPIENT_MAINNET"
+else
+    echo "FEE_RECIPIENT_MAINNET is not set or is not a valid ethereum address, setting it to the null address"
+    FEE_RECIPIENT_ADDRESS="0x0000000000000000000000000000000000000000"
+fi
+
 exec /opt/teku/bin/teku \
     --network=mainnet \
     --data-base-path=/opt/teku/data \
@@ -47,4 +55,5 @@ exec /opt/teku/bin/teku \
     --metrics-port 8008 \
     --metrics-host-allowlist "*" \
     --log-destination=CONSOLE \
+    --validators-proposer-default-fee-recipient="${FEE_RECIPIENT_ADDRESS}" \
     $EXTRA_OPTS
