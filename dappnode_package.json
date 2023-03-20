@@ -21,7 +21,7 @@
     "url": "https://github.com/dappnode/DAppNodePackage-teku/issues"
   },
   "links": {
-    "ui": "http://ui.web3signer.dappnode?signer_url=http://web3signer.web3signer.dappnode:9000",
+    "ui": "http://brain.web3signer.dappnode",
     "homepage": "https://docs.teku.consensys.net",
     "readme": "https://github.com/ConsenSys/teku/blob/master/README.md",
     "docs": "https://docs.teku.consensys.net"
@@ -36,7 +36,7 @@
     "portNumber": 3500
   },
   "warnings": {
-    "onRemove": "Make sure your web3signer does not have this client selected or you will stop validating! (Packages > web3signer > config > client)"
+    "onRemove": "Make sure your StakersUI does not have this client selected! Double check in the Stakers Tab in the left NavBar"
   },
   "globalEnvs": [
     {
