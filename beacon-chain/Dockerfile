@@ -13,8 +13,7 @@ COPY jwtsecret.hex /jwtsecret
 USER root
 RUN apt update && apt install curl --yes
 RUN mkdir -p /opt/teku/data
-RUN chown -R 1001:1001 /opt/teku/data && \
-    chmod +x /usr/bin/entrypoint.sh
+RUN chown -R 1001:1001 /opt/teku/data
 
 ENV JAVA_OPTS="-Xmx4g"
 
