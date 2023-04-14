@@ -8,7 +8,12 @@ WEB3SIGNER_API="http://web3signer.web3signer.dappnode:9000"
 if [ -n "$_DAPPNODE_GLOBAL_MEVBOOST_MAINNET" ] && [ "$_DAPPNODE_GLOBAL_MEVBOOST_MAINNET" == "true" ]; then
     echo "MEVBOOST is enabled"
     MEVBOOST_URL="http://mev-boost.mev-boost.dappnode:18550"
-    EXTRA_OPTS="--validators-builder-registration-default-enabled ${EXTRA_OPTS}"
+    EXTRA_OPTS="--validators-builder-registration-default-enabled=true ${EXTRA_OPTS}"
+
+  # If validator does not include flag --validators-proposer-blinded-blocks-enabled, append it to EXTRA_OPTS
+  if [[ $EXTRA_OPTS != *"validators-proposer-blinded-blocks-enabled"* ]]; then
+    EXTRA_OPTS="--validators-proposer-blinded-blocks-enabled=true ${EXTRA_OPTS}"
+  fi
 fi
 
 #Handle Graffiti Character Limit
