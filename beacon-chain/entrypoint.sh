@@ -30,6 +30,12 @@ if [ -n "$_DAPPNODE_GLOBAL_MEVBOOST_MAINNET" ] && [ "$_DAPPNODE_GLOBAL_MEVBOOST_
     EXTRA_OPTS="--builder-endpoint=${MEVBOOST_URL} ${EXTRA_OPTS}"
 fi
 
+# If EXTRA_OPTS does not include flag --suggested-fee-recipient, append it
+if [[ $EXTRA_OPTS != *"validators-proposer-default-fee-recipient"* ]]; then
+  echo "Adding --validators-proposer-default-fee-recipient=${FEE_RECIPIENT_ADDRESS} to EXTRA_OPTS"
+  EXTRA_OPTS="--validators-proposer-default-fee-recipient=${FEE_RECIPIENT_ADDRESS} ${EXTRA_OPTS}"
+fi
+
 exec /opt/teku/bin/teku \
     --network=mainnet \
     --data-base-path=/opt/teku/data \
