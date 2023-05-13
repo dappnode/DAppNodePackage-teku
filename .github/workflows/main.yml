@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
       - run: npx @dappnode/dappnodesdk build --skip_save
       
- e2e-test:
+  e2e-test:
     runs-on: mainnet
     needs: build-test
     if: github.event_name != 'push'
