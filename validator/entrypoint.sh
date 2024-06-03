@@ -42,4 +42,5 @@ exec /opt/teku/bin/teku --log-destination=CONSOLE \
   --validator-api-keystore-password-file=/cert/teku_keystore_password.txt \
   --validators-proposer-default-fee-recipient="${FEE_RECIPIENT_ADDRESS}" \
   --logging="${LOG_TYPE}" \
+  --doppelganger-detection-enabled=true \
   ${EXTRA_OPTS}
